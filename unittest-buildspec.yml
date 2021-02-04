@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions: 
+      python: 3.8
+    commands:
+      # - aws cloudformation package --template-file template.yml --s3-bucket test-lambdapipeline --output-template-file outputTemplate.yml
+      - cd src/ 
+      - pip3 install virtualenv
+      - virtualenv env
+      - . env/bin/activate
+      - pip3 install -r requirements.txt
+  post_build:
+    commands:
+      - cd ..
+      - python3 -m unittest discover -v
+artifacts:
+  type: zip
+  files:
+    - template.yml 
+    - unittestOutputTemplate.yml
