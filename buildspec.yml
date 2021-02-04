@@ -11,7 +11,7 @@ phases:
       - pip3 install -r requirements.txt
       - cd ..
       - sam build 
-      - sam package --s3-bucket createsms-usbankdemo2 --s3-prefix dev/builds --output-template-file outputTemplate.yml
+      - sam package --s3-bucket usbankdemobuilds --s3-prefix createsms_usbankdemo --output-template-file outputTemplate.yml
 artifacts:
   type: zip
   files:
