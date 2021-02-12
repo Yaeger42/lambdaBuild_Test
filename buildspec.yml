@@ -5,9 +5,6 @@ phases:
       python: 3.8
     commands:
       - cd src/ 
-      - zip CreateSMS_USBankDemo.zip index.py
-      - aws s3 cp CreateSMS_USBankDemo.zip s3://lambda-functions-cloudformation/CreateSMS_USBankDemo.zip
-      - rm -r CreateSMS_USBankDemo.zip
       - pip3 install virtualenv
       - virtualenv env
       - . env/bin/activate

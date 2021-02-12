@@ -4,8 +4,10 @@ phases:
     runtime-versions: 
       python: 3.8
     commands:
-      # - aws cloudformation package --template-file template.yml --s3-bucket test-lambdapipeline --output-template-file outputTemplate.yml
-      - cd src/ 
+      - cd src/
+      - zip CreateSMS_USBankDemo.zip lambda_function.py
+      - aws s3 cp CreateSMS_USBankDemo.zip s3://lambda-functions-cloudformation/CreateSMS_USBankDemo.zip
+      - rm -r CreateSMS_USBankDemo.zip 
       - pip3 install virtualenv
       - virtualenv env
       - . env/bin/activate
