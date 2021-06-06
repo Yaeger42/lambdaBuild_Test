@@ -13,7 +13,6 @@ phases:
       - sam build 
       - sam package --s3-bucket usbankdemobuilds --s3-prefix createsms_usbankdemo --output-template-file outputTemplate.yml
 artifacts:
-  type: zip
   files:
     - template.yml 
     - outputTemplate.yml
