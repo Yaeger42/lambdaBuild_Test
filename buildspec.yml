@@ -14,6 +14,7 @@ phases:
       - sam package --s3-bucket builds-lambda-test --output-template-file outputTemplate.yml
       # --s3-prefix createsms_usbankdemo This is a folder
 artifacts:
+  type: zip
   files:
     - template.yml 
     - outputTemplate.yml
