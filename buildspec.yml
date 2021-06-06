@@ -11,7 +11,8 @@ phases:
       - pip3 install -r requirements.txt
       - cd ..
       - sam build 
-      - sam package --s3-bucket usbankdemobuilds --s3-prefix createsms_usbankdemo --output-template-file outputTemplate.yml
+      - sam package --s3-bucket builds-lambda-test --output-template-file outputTemplate.yml
+      # --s3-prefix createsms_usbankdemo This is a folder
 artifacts:
   files:
     - template.yml 
